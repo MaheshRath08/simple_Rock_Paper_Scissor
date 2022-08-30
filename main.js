@@ -69,5 +69,22 @@ function theGame(p,c){
     cChoice.textContent = c
     pScore.textContent = player
     cScore.textContent = comp
+
+    animate()
+}
+
+function animate(){
+    pChoice.classList.add("anim1")
+    cChoice.classList.add("anim1")
+    messageEl.classList.add("anim2")
+    pScore.classList.add("anim3")
+    cScore.classList.add("anim3")
     
+    setTimeout(() => {
+        pChoice.classList.remove("anim1")
+        cChoice.classList.remove("anim1")
+        messageEl.classList.remove("anim2")
+        pScore.classList.remove("anim3")
+        cScore.classList.remove("anim3")
+    }, 410);
 }
