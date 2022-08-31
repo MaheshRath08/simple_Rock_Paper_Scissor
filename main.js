@@ -15,16 +15,19 @@ let message = ""
 let player = 0
 let comp = 0
 
+//Random choices for computer
 function randChoice(){
     let idx = Math.floor(Math.random()*3)
     return cList[idx]
 }
 
+//intro to main game transition 
 startBtn.addEventListener("click",()=>{
     intro.classList.add("fadeout")
     main.classList.remove("fadeout")
 })
 
+//Triger function when buttons are clicked
 btn.forEach(e =>{
     e.addEventListener("click", ()=>{
         let compChoice = randChoice()
@@ -32,6 +35,7 @@ btn.forEach(e =>{
     })
 })
 
+//The main game lies here
 function theGame(p,c){
     if(p===c){
         message = "TIE"
@@ -64,22 +68,27 @@ function theGame(p,c){
             }
         }
     }
+    //Display the scores
     messageEl.textContent = message
     pChoice.textContent = p
     cChoice.textContent = c
     pScore.textContent = player
     cScore.textContent = comp
 
+    //calling of the animation function
     animate()
 }
 
+//Define the animation function
 function animate(){
+    //add animation
     pChoice.classList.add("anim1")
     cChoice.classList.add("anim1")
     messageEl.classList.add("anim2")
     pScore.classList.add("anim3")
     cScore.classList.add("anim3")
     
+    //Clear animation to keep it going
     setTimeout(() => {
         pChoice.classList.remove("anim1")
         cChoice.classList.remove("anim1")
