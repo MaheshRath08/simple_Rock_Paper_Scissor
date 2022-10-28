@@ -32,6 +32,7 @@ section{
 }
 .ask-container h1{
     font-size: 3rem;
+    text-align: center;
 }
 .main-container{
     position: absolute;
@@ -46,6 +47,7 @@ section{
     justify-content:space-evenly;
     align-items: center;
     height: 15vh;
+    text-align: center;
 }
 .choices p{
     font-size: 2rem;
@@ -108,4 +110,23 @@ div.fadeout{
     0%{transform: translateY(-1rem);}
     70%{transform: translateY(1rem) scale(1.3);}
     100%{transform: translateY(0) scale(1);}
+}
+
+@media (max-width:900px) {
+    .btn-container{
+        flex-direction: column;
+        margin-top: 5rem;
+    }
+    .score-container{
+        flex-direction: column;
+    }
+    .message{
+        margin-top:5rem ;
+    }
+    .choices p{
+        font-size: 1.4rem;
+    }
+    .choices h2{
+        font-size: 1.2rem;
+    }
 }
